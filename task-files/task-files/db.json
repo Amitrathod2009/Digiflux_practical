@@ -1,0 +1,450 @@
+{
+  "meta": {
+    "generatedAtISO": "2026-07-29T09:00:00.000Z",
+    "weightUnitOnServer": "kg",
+    "girthUnitOnServer": "mm",
+    "note": "Server always stores kg and mm. Any other unit is a display concern."
+  },
+  "credentials": {
+    "email": "coach@molt.app",
+    "password": "molt1234"
+  },
+  "coach": {
+    "id": "coach_1",
+    "name": "Priya Menon",
+    "email": "coach@molt.app",
+    "role": "coach",
+    "gymName": "Molt Strength Studio",
+    "clientCount": 5
+  },
+  "clients": [
+    {
+      "id": "c1",
+      "name": "Aarav Shah",
+      "goal": "fat_loss",
+      "startDateISO": "2026-03-31T09:00:00.000Z",
+      "heightCm": 178,
+      "avatarColor": "#3B82F6"
+    },
+    {
+      "id": "c2",
+      "name": "Meera Iyer",
+      "goal": "muscle_gain",
+      "startDateISO": "2026-07-20T09:00:00.000Z",
+      "heightCm": 162,
+      "avatarColor": "#10B981"
+    },
+    {
+      "id": "c3",
+      "name": "Rohan Desai",
+      "goal": "maintenance",
+      "startDateISO": "2026-07-27T09:00:00.000Z",
+      "heightCm": 171,
+      "avatarColor": "#F59E0B"
+    },
+    {
+      "id": "c4",
+      "name": "Sana Qureshi",
+      "goal": "fat_loss",
+      "startDateISO": "2026-05-30T09:00:00.000Z",
+      "heightCm": 165,
+      "avatarColor": "#EF4444"
+    },
+    {
+      "id": "c5",
+      "name": "Vikram Nair",
+      "goal": "recomp",
+      "startDateISO": "2025-06-24T09:00:00.000Z",
+      "heightCm": 183,
+      "avatarColor": "#8B5CF6"
+    }
+  ],
+  "weightEntries": [
+    {
+      "id": "w_1001",
+      "clientId": "c1",
+      "dateISO": "2026-05-02T09:00:00.000Z",
+      "weightKg": 92.4,
+      "note": "Baseline weigh-in",
+      "source": "coach"
+    },
+    {
+      "id": "w_1002",
+      "clientId": "c1",
+      "dateISO": "2026-05-09T09:00:00.000Z",
+      "weightKg": 91.8,
+      "note": null,
+      "source": "coach"
+    },
+    {
+      "id": "w_1003",
+      "clientId": "c1",
+      "dateISO": "2026-05-16T09:00:00.000Z",
+      "weightKg": 91.9,
+      "note": "Travel week",
+      "source": "coach"
+    },
+    {
+      "id": "w_1004",
+      "clientId": "c1",
+      "dateISO": "2026-05-23T09:00:00.000Z",
+      "weightKg": 90.6,
+      "note": null,
+      "source": "coach"
+    },
+    {
+      "id": "w_1005",
+      "clientId": "c1",
+      "dateISO": "2026-05-30T09:00:00.000Z",
+      "weightKg": 90.1,
+      "note": null,
+      "source": "coach"
+    },
+    {
+      "id": "w_1006",
+      "clientId": "c1",
+      "dateISO": "2026-06-06T09:00:00.000Z",
+      "weightKg": 89.4,
+      "note": null,
+      "source": "coach"
+    },
+    {
+      "id": "w_1007",
+      "clientId": "c1",
+      "dateISO": "2026-06-13T09:00:00.000Z",
+      "weightKg": 89.6,
+      "note": null,
+      "source": "coach"
+    },
+    {
+      "id": "w_1008",
+      "clientId": "c1",
+      "dateISO": "2026-06-20T09:00:00.000Z",
+      "weightKg": 88.5,
+      "note": null,
+      "source": "coach"
+    },
+    {
+      "id": "w_1009",
+      "clientId": "c1",
+      "dateISO": "2026-06-27T09:00:00.000Z",
+      "weightKg": 88,
+      "note": null,
+      "source": "coach"
+    },
+    {
+      "id": "w_1010",
+      "clientId": "c1",
+      "dateISO": "2026-07-04T09:00:00.000Z",
+      "weightKg": 87.4,
+      "note": "Feeling strong",
+      "source": "coach"
+    },
+    {
+      "id": "w_1011",
+      "clientId": "c1",
+      "dateISO": "2026-07-11T09:00:00.000Z",
+      "weightKg": 87.1,
+      "note": null,
+      "source": "coach"
+    },
+    {
+      "id": "w_1012",
+      "clientId": "c1",
+      "dateISO": "2026-07-18T09:00:00.000Z",
+      "weightKg": 86.5,
+      "note": null,
+      "source": "coach"
+    },
+    {
+      "id": "w_1013",
+      "clientId": "c1",
+      "dateISO": "2026-07-25T09:00:00.000Z",
+      "weightKg": 86.2,
+      "note": null,
+      "source": "coach"
+    },
+    {
+      "id": "w_1014",
+      "clientId": "c1",
+      "dateISO": "2026-07-28T09:00:00.000Z",
+      "weightKg": 86,
+      "note": "Morning, fasted",
+      "source": "coach"
+    },
+    {
+      "id": "w_1015",
+      "clientId": "c2",
+      "dateISO": "2026-07-24T09:00:00.000Z",
+      "weightKg": 54.3,
+      "note": "First weigh-in",
+      "source": "coach"
+    },
+    {
+      "id": "w_1016",
+      "clientId": "c4",
+      "dateISO": "2026-07-17T09:00:00.000Z",
+      "weightKg": 70.1,
+      "note": null,
+      "source": "coach"
+    },
+    {
+      "id": "w_1017",
+      "clientId": "c4",
+      "dateISO": "2026-06-19T09:00:00.000Z",
+      "weightKg": 71.6,
+      "note": "Start of block",
+      "source": "coach"
+    },
+    {
+      "id": "w_1018",
+      "clientId": "c4",
+      "dateISO": "2026-07-26T09:00:00.000Z",
+      "weightKg": 70,
+      "note": null,
+      "source": "coach"
+    },
+    {
+      "id": "w_1019",
+      "clientId": "c4",
+      "dateISO": "2026-07-03T09:00:00.000Z",
+      "weightKg": 70.9,
+      "note": null,
+      "source": "coach"
+    },
+    {
+      "id": "w_1020",
+      "clientId": "c4",
+      "dateISO": "2026-07-10T09:00:00.000Z",
+      "weightKg": 70.4,
+      "note": null,
+      "source": "coach"
+    },
+    {
+      "id": "w_1021",
+      "clientId": "c4",
+      "dateISO": "2026-07-10T15:00:00.000Z",
+      "weightKg": 70.7,
+      "note": "Re-weighed after training",
+      "source": "coach"
+    },
+    {
+      "id": "w_1022",
+      "clientId": "c5",
+      "dateISO": "2025-12-31T09:00:00.000Z",
+      "weightKg": 79.2,
+      "note": null,
+      "source": "coach"
+    },
+    {
+      "id": "w_1023",
+      "clientId": "c5",
+      "dateISO": "2026-01-30T09:00:00.000Z",
+      "weightKg": 78.6,
+      "note": null,
+      "source": "coach"
+    },
+    {
+      "id": "w_1024",
+      "clientId": "c5",
+      "dateISO": "2026-03-01T09:00:00.000Z",
+      "weightKg": 78.9,
+      "note": null,
+      "source": "coach"
+    },
+    {
+      "id": "w_1025",
+      "clientId": "c5",
+      "dateISO": "2026-03-31T09:00:00.000Z",
+      "weightKg": 77.8,
+      "note": null,
+      "source": "coach"
+    },
+    {
+      "id": "w_1026",
+      "clientId": "c5",
+      "dateISO": "2026-04-25T09:00:00.000Z",
+      "weightKg": 77.1,
+      "note": "Last session before break",
+      "source": "coach"
+    }
+  ],
+  "girthEntries": [
+    {
+      "id": "g_1027",
+      "clientId": "c1",
+      "dateISO": "2026-05-02T09:00:00.000Z",
+      "site": "waist",
+      "valueMm": 1012,
+      "source": "coach"
+    },
+    {
+      "id": "g_1028",
+      "clientId": "c1",
+      "dateISO": "2026-05-02T09:00:00.000Z",
+      "site": "chest",
+      "valueMm": 1068,
+      "source": "coach"
+    },
+    {
+      "id": "g_1029",
+      "clientId": "c1",
+      "dateISO": "2026-05-02T09:00:00.000Z",
+      "site": "hip",
+      "valueMm": 1043,
+      "source": "coach"
+    },
+    {
+      "id": "g_1030",
+      "clientId": "c1",
+      "dateISO": "2026-05-02T09:00:00.000Z",
+      "site": "thigh",
+      "valueMm": 618,
+      "source": "coach"
+    },
+    {
+      "id": "g_1031",
+      "clientId": "c1",
+      "dateISO": "2026-05-30T09:00:00.000Z",
+      "site": "waist",
+      "valueMm": 991,
+      "source": "coach"
+    },
+    {
+      "id": "g_1032",
+      "clientId": "c1",
+      "dateISO": "2026-05-30T09:00:00.000Z",
+      "site": "chest",
+      "valueMm": 1061,
+      "source": "coach"
+    },
+    {
+      "id": "g_1033",
+      "clientId": "c1",
+      "dateISO": "2026-05-30T09:00:00.000Z",
+      "site": "hip",
+      "valueMm": 1038,
+      "source": "coach"
+    },
+    {
+      "id": "g_1034",
+      "clientId": "c1",
+      "dateISO": "2026-05-30T09:00:00.000Z",
+      "site": "thigh",
+      "valueMm": 615,
+      "source": "coach"
+    },
+    {
+      "id": "g_1035",
+      "clientId": "c1",
+      "dateISO": "2026-06-27T09:00:00.000Z",
+      "site": "waist",
+      "valueMm": 968,
+      "source": "coach"
+    },
+    {
+      "id": "g_1036",
+      "clientId": "c1",
+      "dateISO": "2026-06-27T09:00:00.000Z",
+      "site": "chest",
+      "valueMm": 1057,
+      "source": "coach"
+    },
+    {
+      "id": "g_1037",
+      "clientId": "c1",
+      "dateISO": "2026-06-27T09:00:00.000Z",
+      "site": "hip",
+      "valueMm": 1029,
+      "source": "coach"
+    },
+    {
+      "id": "g_1038",
+      "clientId": "c1",
+      "dateISO": "2026-06-27T09:00:00.000Z",
+      "site": "thigh",
+      "valueMm": 610,
+      "source": "coach"
+    },
+    {
+      "id": "g_1039",
+      "clientId": "c1",
+      "dateISO": "2026-07-25T09:00:00.000Z",
+      "site": "waist",
+      "valueMm": 946,
+      "source": "coach"
+    },
+    {
+      "id": "g_1040",
+      "clientId": "c1",
+      "dateISO": "2026-07-25T09:00:00.000Z",
+      "site": "chest",
+      "valueMm": 1052,
+      "source": "coach"
+    },
+    {
+      "id": "g_1041",
+      "clientId": "c1",
+      "dateISO": "2026-07-25T09:00:00.000Z",
+      "site": "hip",
+      "valueMm": 1021,
+      "source": "coach"
+    },
+    {
+      "id": "g_1042",
+      "clientId": "c1",
+      "dateISO": "2026-07-25T09:00:00.000Z",
+      "site": "thigh",
+      "valueMm": 607,
+      "source": "coach"
+    },
+    {
+      "id": "g_1043",
+      "clientId": "c4",
+      "dateISO": "2026-06-19T09:00:00.000Z",
+      "site": "waist",
+      "valueMm": 842,
+      "source": "coach"
+    },
+    {
+      "id": "g_1044",
+      "clientId": "c4",
+      "dateISO": "2026-07-26T09:00:00.000Z",
+      "site": "waist",
+      "valueMm": 829,
+      "source": "coach"
+    },
+    {
+      "id": "g_1045",
+      "clientId": "c5",
+      "dateISO": "2025-12-31T09:00:00.000Z",
+      "site": "waist",
+      "valueMm": 903,
+      "source": "coach"
+    },
+    {
+      "id": "g_1046",
+      "clientId": "c5",
+      "dateISO": "2026-04-25T09:00:00.000Z",
+      "site": "waist",
+      "valueMm": 888,
+      "source": "coach"
+    },
+    {
+      "id": "g_1047",
+      "clientId": "c5",
+      "dateISO": "2025-12-31T09:00:00.000Z",
+      "site": "arm",
+      "valueMm": 351,
+      "source": "coach"
+    },
+    {
+      "id": "g_1048",
+      "clientId": "c5",
+      "dateISO": "2026-04-25T09:00:00.000Z",
+      "site": "arm",
+      "valueMm": 358,
+      "source": "coach"
+    }
+  ]
+}
