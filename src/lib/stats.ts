@@ -10,3 +10,11 @@ export function rowDeltas(values: number[]): Array<number | null> {
     i === values.length - 1 ? null : value - values[i + 1],
   );
 }
+
+export function average(values: number[]): number | null {
+  if (values.length === 0) {
+    return null;
+  }
+  const sum = values.reduce((acc, val) => acc + val, 0);
+  return sum / values.length;
+}

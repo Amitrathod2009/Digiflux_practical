@@ -12,7 +12,7 @@ import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { deleteWeight, fetchWeight, WeightListItem } from '../../store/slices/weightSlice';
 import { setWeightUnit } from '../../store/slices/prefsSlice';
 import { formatWeight, WeightUnit } from '../../lib/units';
-import { rowDeltas, totalChange } from '../../lib/stats';
+import { average, rowDeltas, totalChange } from '../../lib/stats';
 import { formatDay, rangeLabel } from '../../lib/dates';
 import { EmptyView, ErrorView, LoadingView } from '../StateViews';
 import { color, radius, space, type } from '../../theme';
@@ -26,7 +26,7 @@ export default function WeightPanel({ clientId, onAdd }: WeightPanelProps) {
   const dispatch = useAppDispatch();
   const range = useAppSelector(state => state.prefs.range);
   const unit = useAppSelector(state => state.prefs.weightUnit);
-  const { items, status, error } = useAppSelector(state => state.weight);
+  const { items, totalCount, status, error } = useAppSelector(state => state.weight);
 
   useEffect(() => {
     dispatch(fetchWeight({ clientId, range }));
@@ -34,6 +34,7 @@ export default function WeightPanel({ clientId, onAdd }: WeightPanelProps) {
 
   const deltas = useMemo(() => rowDeltas(items.map(i => i.weightKg)), [items]);
   const change = useMemo(() => totalChange(items.map(i => i.weightKg)), [items]);
+  const avg = useMemo(() => average(items.map(i => i.weightKg)), [items]);
 
   const confirmDelete = (item: WeightListItem) => {
     if (item.pending) {
@@ -97,7 +98,7 @@ export default function WeightPanel({ clientId, onAdd }: WeightPanelProps) {
   };
 
   const emptyState =
-    range === 'all' ? (
+    totalCount === 0 || range === 'all' ? (
       <EmptyView title="No weight logged yet" body="Add the first entry to start tracking." />
     ) : (
       <EmptyView
@@ -123,6 +124,9 @@ export default function WeightPanel({ clientId, onAdd }: WeightPanelProps) {
               <Text style={styles.heroValue}>
                 {formatWeight(latest.weightKg, unit, { withUnit: false })}
                 <Text style={styles.heroUnit}> {unit}</Text>
+              </Text>
+              <Text style={styles.heroStats}>
+                Avg: {avg !== null ? formatWeight(avg, unit) : '—'} · {items.length} {items.length === 1 ? 'entry' : 'entries'}
               </Text>
               <Text style={styles.heroChange}>
                 {change === null
@@ -198,6 +202,11 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: color.inkMuted,
     letterSpacing: 0,
+  },
+  heroStats: {
+    ...type.bodyStrong,
+    color: color.inkMuted,
+    fontSize: 14,
   },
   heroChange: {
     ...type.caption,

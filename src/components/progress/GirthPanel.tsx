@@ -20,7 +20,7 @@ export default function GirthPanel({ clientId }: { clientId: string }) {
   const dispatch = useAppDispatch();
   const range = useAppSelector(state => state.prefs.range);
   const site = useAppSelector(state => state.prefs.site);
-  const { items, status, error } = useAppSelector(state => state.girth);
+  const { items, totalCount, status, error } = useAppSelector(state => state.girth);
 
   useEffect(() => {
     dispatch(fetchGirth({ clientId, site, range }));
@@ -97,7 +97,7 @@ export default function GirthPanel({ clientId }: { clientId: string }) {
           ) : null
         }
         ListEmptyComponent={
-          range === 'all' ? (
+          totalCount === 0 || range === 'all' ? (
             <EmptyView
               title={`No ${site} measurements yet`}
               body="Measurements for other sites may still exist — try another site."

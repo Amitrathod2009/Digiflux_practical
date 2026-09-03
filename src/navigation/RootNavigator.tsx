@@ -1,11 +1,12 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useAppSelector } from '../store/hooks';
-import { color, type } from '../theme';
+import { color } from '../theme';
 import LoginScreen from '../screens/LoginScreen';
+import SplashScreen from '../screens/SplashScreen';
 import ClientsScreen from '../screens/ClientsScreen';
 import ClientProgressScreen from '../screens/ClientProgressScreen';
 import AddWeightScreen from '../screens/AddWeightScreen';
@@ -89,43 +90,36 @@ function MainTabs() {
   );
 }
 
-function SplashView() {
+export default function RootNavigator() {
+  const status = useAppSelector(state => state.auth.status);
+  const [isSplashDone, setIsSplashDone] = useState(false);
+
   return (
-    <View style={styles.splash}>
-      <Text style={styles.splashWordmark}>Molt Coach</Text>
+    <View style={styles.root}>
+      {status !== 'bootstrapping' && (
+        <NavigationContainer>
+          {status === 'signedIn' ? (
+            <MainTabs />
+          ) : (
+            <AuthStack.Navigator screenOptions={{ headerShown: false }}>
+              <AuthStack.Screen name="Login" component={LoginScreen} />
+            </AuthStack.Navigator>
+          )}
+        </NavigationContainer>
+      )}
+
+      {(!isSplashDone || status === 'bootstrapping') && (
+        <SplashScreen
+          isReady={status !== 'bootstrapping'}
+          onFinish={() => setIsSplashDone(true)}
+        />
+      )}
     </View>
   );
 }
 
-export default function RootNavigator() {
-  const status = useAppSelector(state => state.auth.status);
-
-  if (status === 'bootstrapping') {
-    return <SplashView />;
-  }
-
-  return (
-    <NavigationContainer>
-      {status === 'signedIn' ? (
-        <MainTabs />
-      ) : (
-        <AuthStack.Navigator screenOptions={{ headerShown: false }}>
-          <AuthStack.Screen name="Login" component={LoginScreen} />
-        </AuthStack.Navigator>
-      )}
-    </NavigationContainer>
-  );
-}
-
 const styles = StyleSheet.create({
-  splash: {
+  root: {
     flex: 1,
-    backgroundColor: color.bg,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  splashWordmark: {
-    ...type.title,
-    color: color.accent,
   },
 });
